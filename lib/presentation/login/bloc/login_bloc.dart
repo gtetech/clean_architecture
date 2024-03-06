@@ -1,5 +1,4 @@
 import 'package:clean_architecture/core/extensions/extensions.dart';
-import 'package:clean_architecture/domain/usecase/login_use_case.dart';
 import 'package:clean_architecture/presentation/login/bloc/login_screen_events.dart';
 import 'package:clean_architecture/presentation/login/bloc/login_screen_states.dart';
 import 'package:clean_architecture/presentation/login/interactor/login_interactor.dart';
@@ -45,7 +44,7 @@ class LoginBloc extends Bloc<LoginScreenEvents, LoginScreenState> {
     }
     emit(state.copyWith(states: LoginStates.loading));
     await _loginInteractor.authenticateUser();
-    
+
     //for showing success and failure each time
     if (_success) {
       emit(state.copyWith(
