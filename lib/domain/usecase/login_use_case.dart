@@ -2,7 +2,7 @@
 import 'package:clean_architecture/data/repository_impl/auth_repository_impl.dart';
 import 'package:clean_architecture/domain/entities/user_entity.dart';
 import 'package:clean_architecture/domain/repository/auth_repository.dart';
-import 'package:clean_architecture/domain/usecase/base_use_case.dart';
+import 'package:clean_architecture/core/helper/base_use_case.dart';
 
 class LoginUseCase extends BaseUseCase<LoginRequest, UserEntity> {
 
