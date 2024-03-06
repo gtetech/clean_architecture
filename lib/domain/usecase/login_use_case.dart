@@ -1,15 +1,19 @@
+import 'dart:math';
+
+import 'package:clean_architecture/data/models/user_model.dart';
 import 'package:clean_architecture/data/repository_impl/auth_repository_impl.dart';
+import 'package:clean_architecture/domain/entities/user_entity.dart';
 import 'package:clean_architecture/domain/repository/auth_repository.dart';
 import 'package:clean_architecture/domain/usecase/base_use_case.dart';
 
-class LoginUseCase extends BaseUseCase<LoginRequest, LoginResponse> {
+class LoginUseCase extends BaseUseCase<LoginRequest, UserEntity> {
 
   final AuthRepository _authRepository = AuthRepositoryImpl();
 
   @override
-  Future<LoginResponse> execute({LoginRequest? request}) async {
-    _authRepository.loginUser();
-    return LoginResponse("Login Successfully", "Syed Ibrahim");
+  Future<UserEntity> execute({LoginRequest? request}) async {
+    final user = await _authRepository.loginUser();
+    return user;
   }
 }
 

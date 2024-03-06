@@ -8,9 +8,7 @@ class LoginScreenState extends Equatable {
   final String? errorMessage;
   final LoginValidationErrors? validationErrors;
 
-  @override
-  List<Object?> get props =>
-      [states, successMessage, errorMessage, validationErrors];
+
 
   factory LoginScreenState.initial() =>
       const LoginScreenState(states: LoginStates.initial);
@@ -35,6 +33,10 @@ class LoginScreenState extends Equatable {
     this.errorMessage,
     this.validationErrors,
   });
+
+  @override
+  List<Object?> get props =>
+      [states, successMessage, errorMessage, validationErrors];
 }
 
 class LoginValidationErrors {
